@@ -1,0 +1,28 @@
+Working title: RogueBreaker
+Engine: Unity/C#
+Target Platform: WebGL/Windows on Itch.io
+
+Core Game Loop & Run Rules
+1. Wave Initialization:
+  A structured pattern of destructible bricks spawns.
+  Player spawns with 3 lives for that wave.
+  Player starts with a baseline allowance of 1 dash charge per wave (expandable/rechargeable via upgrades).
+2. Action Phase (Breakout + QTE):
+  The ball bounces between boundary walls, the paddle, and brick layouts.
+  Base Dash: Triggered on demand to reposition rapidly across the board. Reacts to cursor position.
+  QTE Movement Trigger: When specific events occur (e.g., ball entering a defined "Danger Zone" near the bottom gutter or an incoming projectile hazard), a brief, non-intrusive prompt appears (e.g., timed button strike or micro-directional flick) that rewards the player with an instantaneous dash, extended reach, or a trajectory redirection.
+3. Wave Completion & Drafting:
+  Clearing all target bricks halts gameplay and presents an upgrade selection screen.
+  Player drafts 1 of 3 randomized perks/modifiers.
+4. Escalation & Boss Phase:
+  Stages 1 to 5 escalate brick density, movement speed, and hazard frequency.
+5. Permadeath & Failure:
+  Losing all 3 lives during any wave ends the run immediately.
+
+For MVP:
+1. All basic breakout mechanics
+   1. Paddle movement
+   2. Arranging block on generate and breaking when in contact with ball
+   3. Score Counter
+2. 4 stages + Boss Stage
+3. Choosing between multiplier, paddle size, dash cooldown reduction, extra life and ball strength between waves
